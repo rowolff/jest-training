@@ -1,7 +1,7 @@
 module.exports = function (wallaby) {
   return {
     files: [
-      {pattern: 'node_modules/babel-polyfill/dist/polyfill.js', instrument: false},
+      //{pattern: 'node_modules/babel-polyfill/dist/polyfill.js', instrument: false},
       'src/**/*.js'
     ],
 
@@ -20,6 +20,8 @@ module.exports = function (wallaby) {
       '**/*.js': wallaby.compilers.babel({
           'presets': ['env']
       })
-    }
+    },
+
+    debug: true
   };
 };
