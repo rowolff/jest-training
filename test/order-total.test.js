@@ -1,7 +1,6 @@
 const orderTotal = require('../src/order-total')
 
 it('calls vatapi.com correctly', () => {
-  let isFakeFetchCalled = false
   const fakeProcess = {
     env: {
       VAT_API_KEY: 'key123'
@@ -10,7 +9,6 @@ it('calls vatapi.com correctly', () => {
   const fakeFetch = (url, options) => {
     expect(options.headers.apikey).toBe('key123')
     expect(url).toBe('https://vatapi.com/v1/country-code-check?code=DE')
-    isFakeFetchCalled = true
     return Promise.resolve({
       json: () => Promise.resolve({
         rates: {
@@ -28,7 +26,6 @@ it('calls vatapi.com correctly', () => {
     ]
   }).then(result => {
     expect(result).toBe(20*2*1.19)
-    expect(isFakeFetchCalled).toBe(true)
   })
 })
 
