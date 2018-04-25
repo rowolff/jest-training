@@ -20,8 +20,6 @@ module.exports = function (wallaby) {
       '**/*.js': wallaby.compilers.babel({
           'presets': ['env']
       })
-    },
-
-    debug: true
+    }
   };
 };
