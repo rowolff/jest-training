@@ -18,8 +18,8 @@ module.exports = function (wallaby) {
 
     compilers: {
       '**/*.js': wallaby.compilers.babel({
-          'presets': ['env']
+        'presets': ['env']
       })
     }
-  };
-};
+  }
+}

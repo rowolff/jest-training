@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 function orderTotal (fetch, process, order) {
   const sumOrderItems = (order) => {
     return order.items.reduce((prev, cur) =>
@@ -18,4 +21,4 @@ function orderTotal (fetch, process, order) {
   return Promise.resolve(sumOrderItems(order))
 }
 
-module.exports = orderTotal
+export default orderTotal
