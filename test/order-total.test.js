@@ -1,4 +1,4 @@
-import orderTotal from '../src/order-total'
+const orderTotal = require('../src/order-total')
 
 it('calls vatapi.com correctly', () => {
   const fakeProcess = {

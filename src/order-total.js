@@ -18,4 +18,4 @@ function orderTotal (fetch, process, order) {
   return Promise.resolve(sumOrderItems(order))
 }
 
-export default orderTotal
+module.exports = orderTotal
